@@ -44,6 +44,13 @@ def make_chains(text_string):
 
     chains = {}
 
+    # loops through string of text until there are only 2 strings left
+    # creates keys in chains dict which are made up of two-word pairs
+    # creates new value for every word in the string that follows the key (two-word pair)
+
+    for i in range(len(text_string)-2):
+        chains[(text_string[i], text_string[i + 1])] = chains.get((text_string[i], text_string[i + 1]), []) + [text_string[i + 2]]
+
     return chains
 
 
